@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:foQus.xcodeproj">
+      location = "group:../foQus">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
