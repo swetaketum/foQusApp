@@ -19,52 +19,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QC3-gJ-vOa">
-                                <rect key="frame" x="176" y="542" width="62" height="34"/>
+                                <rect key="frame" x="176" y="548" width="62" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="9xf-ry-gcm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sign In"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foQus_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="X7S-gI-x5Q">
-                                <rect key="frame" x="87" y="150" width="240" height="183"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pB-CH-k7v" customClass="DesignableTextField" customModule="foQus" customModuleProvider="target">
+                                <rect key="frame" x="100" y="476" width="234" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="pwd"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foQus_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-Xl-5bE">
+                                <rect key="frame" x="87" y="94" width="240" height="177"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="183" id="1cS-Sl-cPm"/>
+                                    <constraint firstAttribute="height" constant="177" id="f4l-bk-oYB"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WkW-zQ-I9a">
-                                <rect key="frame" x="102" y="423" width="210" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fWa-sp-3tc"/>
-                                </constraints>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOb-OB-ZXu" customClass="DesignableTextField" customModule="foQus" customModuleProvider="target">
+                                <rect key="frame" x="100" y="438" width="234" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47l-Tk-sTr">
-                                <rect key="frame" x="102" y="472" width="210" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ks8-nM-jYh"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.68039588730569944" green="0.68039588730569944" blue="0.68039588730569944" alpha="0.71830985915492973" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="47l-Tk-sTr" secondAttribute="trailing" constant="102" id="33d-Oh-C8I"/>
-                            <constraint firstItem="WkW-zQ-I9a" firstAttribute="leading" secondItem="47l-Tk-sTr" secondAttribute="leading" id="5za-JR-t5d"/>
-                            <constraint firstItem="WkW-zQ-I9a" firstAttribute="trailing" secondItem="47l-Tk-sTr" secondAttribute="trailing" id="6cS-g5-inr"/>
-                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6yd-gq-Et6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QC3-gJ-vOa" secondAttribute="bottom" constant="160" id="98H-2i-S9R"/>
-                            <constraint firstItem="X7S-gI-x5Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="Fat-gg-qhK"/>
-                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fo8-VC-M7q"/>
-                            <constraint firstItem="X7S-gI-x5Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="IYH-fx-6Ma"/>
-                            <constraint firstItem="X7S-gI-x5Q" firstAttribute="centerX" secondItem="QC3-gJ-vOa" secondAttribute="centerX" id="KnQ-9b-9Ck"/>
-                            <constraint firstItem="47l-Tk-sTr" firstAttribute="centerX" secondItem="QC3-gJ-vOa" secondAttribute="centerX" id="Rd8-Ph-KoP"/>
-                            <constraint firstItem="47l-Tk-sTr" firstAttribute="top" secondItem="WkW-zQ-I9a" secondAttribute="bottom" constant="19" id="WNr-jn-jp5"/>
-                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="top" secondItem="47l-Tk-sTr" secondAttribute="bottom" constant="40" id="ffM-Mb-d1Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QC3-gJ-vOa" secondAttribute="bottom" constant="160" id="kiA-gu-t6B"/>
+                            <constraint firstItem="3pB-CH-k7v" firstAttribute="trailing" secondItem="yOb-OB-ZXu" secondAttribute="trailing" id="0mk-70-xEd"/>
+                            <constraint firstItem="Boa-Xl-5bE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="7bz-t1-SXa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yOb-OB-ZXu" secondAttribute="trailing" constant="80" id="QBW-AD-9lf"/>
+                            <constraint firstAttribute="bottom" secondItem="yOb-OB-ZXu" secondAttribute="bottom" constant="268" id="YdV-ao-lUf"/>
+                            <constraint firstItem="yOb-OB-ZXu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="aZh-Nw-5X8"/>
+                            <constraint firstItem="Boa-Xl-5bE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eax-aM-7Vc"/>
+                            <constraint firstItem="3pB-CH-k7v" firstAttribute="leading" secondItem="yOb-OB-ZXu" secondAttribute="leading" id="hU2-zB-c3b"/>
+                            <constraint firstItem="3pB-CH-k7v" firstAttribute="top" secondItem="yOb-OB-ZXu" secondAttribute="bottom" constant="8" symbolic="YES" id="jQN-ph-cW3"/>
+                            <constraint firstItem="Boa-Xl-5bE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="ngu-7j-4ty"/>
+                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="centerX" secondItem="Boa-Xl-5bE" secondAttribute="centerX" id="pbj-FY-KXx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QC3-gJ-vOa" secondAttribute="bottom" constant="151" id="wWa-FR-x3N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -76,5 +78,7 @@
     </scenes>
     <resources>
         <image name="foQus_Logo" width="1024" height="1024"/>
+        <image name="pwd" width="2000" height="2000"/>
+        <image name="user" width="540" height="540"/>
     </resources>
 </document>
