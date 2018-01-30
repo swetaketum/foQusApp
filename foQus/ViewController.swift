@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var username: DesignableTextField!
     @IBOutlet weak var password: DesignableTextField!
@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view, typically from a nib.
+        self.username.delegate = self
+        self.password.delegate=self
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +89,15 @@ class ViewController: UIViewController {
             }
         }
         dataTask.resume()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
