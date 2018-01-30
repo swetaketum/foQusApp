@@ -52,8 +52,8 @@
                                     <constraint firstAttribute="width" constant="200" id="fCZ-ZK-KLl"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QC3-gJ-vOa">
-                                <rect key="frame" x="156" y="553" width="62" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QC3-gJ-vOa">
+                                <rect key="frame" x="156" y="496" width="62" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,11 +65,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Tl-Wa-Net"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QC3-gJ-vOa" secondAttribute="bottom" constant="58" id="8Z8-lP-TGV"/>
+                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="69r-KL-gGA"/>
                             <constraint firstItem="Boa-Xl-5bE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E6v-MA-7Dq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QC3-gJ-vOa" secondAttribute="bottom" constant="58" id="IcE-ry-k9j"/>
                             <constraint firstItem="3pB-CH-k7v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JSd-UH-tEM"/>
+                            <constraint firstItem="QC3-gJ-vOa" firstAttribute="top" secondItem="3pB-CH-k7v" secondAttribute="bottom" constant="24" id="K74-jW-wsp"/>
                             <constraint firstItem="Boa-Xl-5bE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="LHg-Dx-3FT"/>
                             <constraint firstItem="3pB-CH-k7v" firstAttribute="top" secondItem="yOb-OB-ZXu" secondAttribute="bottom" constant="22" id="Mf1-tb-MLe"/>
                             <constraint firstItem="yOb-OB-ZXu" firstAttribute="top" secondItem="Boa-Xl-5bE" secondAttribute="bottom" constant="56" id="Zar-yA-wgM"/>
@@ -81,6 +80,7 @@
                     </view>
                     <connections>
                         <outlet property="password" destination="3pB-CH-k7v" id="f0m-HM-4nj"/>
+                        <outlet property="signin" destination="QC3-gJ-vOa" id="t5o-QA-2W8"/>
                         <outlet property="username" destination="yOb-OB-ZXu" id="50S-Hn-8MB"/>
                     </connections>
                 </viewController>

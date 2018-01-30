@@ -12,12 +12,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var username: DesignableTextField!
     @IBOutlet weak var password: DesignableTextField!
+    @IBOutlet weak var signin: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view, typically from a nib.
         self.username.delegate = self
         self.password.delegate=self
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,6 +102,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height - 300
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height - 300
+            }
+        }
     }
 }
 
