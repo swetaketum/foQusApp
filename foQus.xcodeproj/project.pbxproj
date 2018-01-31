@@ -10,8 +10,9 @@
 		7D6C27E72018FBC40033FBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C27E62018FBC40033FBA3 /* AppDelegate.swift */; };
 		7D6C27E92018FBC40033FBA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C27E82018FBC40033FBA3 /* ViewController.swift */; };
 		7D6C27EC2018FBC40033FBA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6C27EA2018FBC40033FBA3 /* Main.storyboard */; };
-		7D6C27EE2018FBC40033FBA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6C27ED2018FBC40033FBA3 /* Assets.xcassets */; };
 		7D6C27F12018FBC40033FBA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6C27EF2018FBC40033FBA3 /* LaunchScreen.storyboard */; };
+		E93DA3842021D5FD0039C398 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DA3832021D5FD0039C398 /* DashboardViewController.swift */; };
+		E9E9E3A92021F43200AD692C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9E3A82021F43200AD692C /* Images.xcassets */; };
 		E9EADEDD201E683A00220B3C /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EADEDC201E683A00220B3C /* DesignableTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,9 +21,10 @@
 		7D6C27E62018FBC40033FBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D6C27E82018FBC40033FBA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D6C27EB2018FBC40033FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7D6C27ED2018FBC40033FBA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D6C27F02018FBC40033FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D6C27F22018FBC40033FBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E93DA3832021D5FD0039C398 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E9E9E3A82021F43200AD692C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9EADEDC201E683A00220B3C /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,10 +61,11 @@
 				7D6C27E62018FBC40033FBA3 /* AppDelegate.swift */,
 				7D6C27E82018FBC40033FBA3 /* ViewController.swift */,
 				7D6C27EA2018FBC40033FBA3 /* Main.storyboard */,
-				7D6C27ED2018FBC40033FBA3 /* Assets.xcassets */,
 				7D6C27EF2018FBC40033FBA3 /* LaunchScreen.storyboard */,
 				7D6C27F22018FBC40033FBA3 /* Info.plist */,
 				E9EADEDC201E683A00220B3C /* DesignableTextField.swift */,
+				E93DA3832021D5FD0039C398 /* DashboardViewController.swift */,
+				E9E9E3A82021F43200AD692C /* Images.xcassets */,
 			);
 			path = foQus;
 			sourceTree = "<group>";
@@ -129,8 +132,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E9E3A92021F43200AD692C /* Images.xcassets in Resources */,
 				7D6C27F12018FBC40033FBA3 /* LaunchScreen.storyboard in Resources */,
-				7D6C27EE2018FBC40033FBA3 /* Assets.xcassets in Resources */,
 				7D6C27EC2018FBC40033FBA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +148,7 @@
 				7D6C27E92018FBC40033FBA3 /* ViewController.swift in Sources */,
 				E9EADEDD201E683A00220B3C /* DesignableTextField.swift in Sources */,
 				7D6C27E72018FBC40033FBA3 /* AppDelegate.swift in Sources */,
+				E93DA3842021D5FD0039C398 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

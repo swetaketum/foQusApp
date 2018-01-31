@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var username: DesignableTextField!
     @IBOutlet weak var password: DesignableTextField!
     @IBOutlet weak var signin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -67,10 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 {
                     print(resp as Any)
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Sign In", message:
-                            "Success", preferredStyle: UIAlertControllerStyle.alert)
-                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-                        self.present(alertController, animated: true, completion: nil)
+                       self.performSegue(withIdentifier: "LoginSegue", sender: self)
                     }
                 }
                 else
@@ -85,6 +83,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             default:
                 DispatchQueue.main.async {
+                    
                     let alertController = UIAlertController(title: "Sign In", message:
                         "Invalid Credentials", preferredStyle: UIAlertControllerStyle.alert)
                     alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
