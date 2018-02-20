@@ -99,9 +99,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cah-6W-udJ">
-                                <rect key="frame" x="121" y="314" width="132.5" height="39.5"/>
+                                <rect key="frame" x="121" y="314" width="133" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-7p-FXq">
@@ -113,9 +113,12 @@
                                         <state key="normal" title="Sign Out">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SignOutButtonAction:" destination="6N2-HN-CI6" eventType="touchUpInside" id="bvw-MY-P79"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.7842528223991394" green="0.78434795141220093" blue="0.78422063589096069" alpha="0.69863013698630139" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.2325021404" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="UPm-LX-f9c" firstAttribute="centerX" secondItem="r9o-7p-FXq" secondAttribute="centerX" id="VaH-n4-7c2"/>
                                     <constraint firstAttribute="width" constant="140" id="m5E-PW-Jxd"/>
@@ -123,7 +126,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.020017681643366814" green="0.0046097845770418644" blue="0.015692409127950668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cah-6W-udJ" firstAttribute="centerY" secondItem="JFh-bA-xmJ" secondAttribute="centerY" id="FhH-il-Wvs"/>
                             <constraint firstAttribute="bottom" secondItem="r9o-7p-FXq" secondAttribute="bottom" id="HHD-1L-9JG"/>
@@ -135,7 +138,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Dashboard" id="dVX-8v-xlU">
-                        <barButtonItem key="leftBarButtonItem" largeContentSizeImage="menu" systemItem="organize" id="mDC-SH-sAJ">
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu" largeContentSizeImage="menu" id="mDC-SH-sAJ">
                             <connections>
                                 <action selector="menuShow:" destination="6N2-HN-CI6" id="8h6-4k-EZC"/>
                             </connections>
@@ -143,12 +146,16 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ExperimentsView" destination="r9o-7p-FXq" id="BBy-nZ-jbo"/>
+                        <outlet property="SignOutButton" destination="UPm-LX-f9c" id="Kaq-Wa-XWH"/>
                         <outlet property="menuConstraint" destination="sZn-TZ-TAo" id="RnD-Ss-pTQ"/>
+                        <segue destination="4dJ-f8-nLJ" kind="unwind" identifier="unwindToLogIn" unwindAction="unwindToLogInSegue:" id="BlZ-VE-ljB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLQ-rn-mPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4dJ-f8-nLJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1234.5" y="-273.5"/>
+            <point key="canvasLocation" x="1234.4000000000001" y="-273.91304347826087"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Qg-N5-dUm">
@@ -160,17 +167,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="82w-cb-lhh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="6N2-HN-CI6" kind="relationship" relationship="rootViewController" id="LsS-Jj-C2Y"/>
+                        <segue destination="X3o-X8-F3r" kind="unwind" identifier="unwindToLogIn" unwindAction="unwindToLogInSegue:" id="1Id-HV-zrS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19s-e0-aEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="X3o-X8-F3r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1023" y="-274"/>
         </scene>
     </scenes>
     <resources>
         <image name="foQus_Logo" width="1024" height="1024"/>
+        <image name="icons8-menu" width="50" height="50"/>
         <image name="menu" width="50" height="39"/>
         <image name="pwd" width="2000" height="2000"/>
         <image name="user" width="540" height="540"/>

@@ -9,15 +9,38 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var menuConstraint: NSLayoutConstraint!
     var menuShow = false
+    var menuName = [String]()
+    
+    @IBOutlet weak var SignOutButton: UIButton!
+    @IBOutlet weak var ExperimentsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var counter = 0
+        for name in menuName {
+            
+             print(name)
+            let testButton1 = UIButton(type: .roundedRect) as UIButton
+            testButton1.frame = CGRect(x: 0, y: counter * 50 , width: 120, height: 50)
+            testButton1.setTitle(name, for: .normal)
+           //testButton1.backgroundColor = UIColor.black
+            testButton1.setTitleColor(UIColor.black, for: .normal)
+            ExperimentsView.addSubview(testButton1)
+            counter = counter + 1
+        }
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func SignOutButtonAction(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "key")
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "unwindToLogIn", sender: self)
+        }
+    }
+    
     @IBAction func menuShow(_ sender: UIBarButtonItem) {
         if (menuShow){
             menuConstraint.constant = -140
@@ -26,24 +49,16 @@ class DashboardViewController: UIViewController {
             menuConstraint.constant = 0
         }
         menuShow = !menuShow
-        
-        
+       
     }
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func createMenu(){
+         print("Inside")
+       
+        
     }
-    */
-
 }
