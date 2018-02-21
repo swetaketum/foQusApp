@@ -77,11 +77,7 @@ class DashboardViewController: UIViewController {
 
         let tag = sender.tag as NSNumber
         lblMessage.text = "Exp " + tag.stringValue
-        
-        if(sender.tag == 0){
-            lblMessage.text = "Exp 0"
-        }
-        
+       
         
     }
 }
