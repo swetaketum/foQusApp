@@ -15,6 +15,9 @@ class DashboardViewController: UIViewController {
     var menuShow = false
     var menuName = [String]()
     
+    @IBOutlet weak var ProjectsView: UIView!
+    
+    @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var SignOutButton: UIButton!
     @IBOutlet weak var ExperimentsView: UIView!
     override func viewDidLoad() {
@@ -28,6 +31,8 @@ class DashboardViewController: UIViewController {
             testButton1.setTitle(name, for: .normal)
            //testButton1.backgroundColor = UIColor.black
             testButton1.setTitleColor(UIColor.black, for: .normal)
+            testButton1.tag = counter
+            testButton1.addTarget(self, action:#selector(menuClicked(sender:)), for: .touchUpInside)
             ExperimentsView.addSubview(testButton1)
             counter = counter + 1
         }
@@ -59,6 +64,20 @@ class DashboardViewController: UIViewController {
     func createMenu(){
          print("Inside")
        
+        
+    }
+    @IBAction func menuClicked(sender:UIButton){
+        if (menuShow){
+            menuConstraint.constant = -140
+        }
+        else {
+            menuConstraint.constant = 0
+        }
+        menuShow = !menuShow
+
+        let tag = sender.tag as NSNumber
+        lblMessage.text = "Exp" + tag.stringValue
+        
         
     }
 }
