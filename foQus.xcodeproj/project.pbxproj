@@ -14,18 +14,24 @@
 		E93DA3842021D5FD0039C398 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DA3832021D5FD0039C398 /* DashboardViewController.swift */; };
 		E9E9E3A92021F43200AD692C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9E3A82021F43200AD692C /* Images.xcassets */; };
 		E9EADEDD201E683A00220B3C /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EADEDC201E683A00220B3C /* DesignableTextField.swift */; };
+		E9F1BFE4203F3B10006468F1 /* Pods_foQus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F1BFE5203F3B10006468F1 /* Pods_foQus.framework */; };
+		E9F1BFE6203F3B18006468F1 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F1BFE7203F3B18006468F1 /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60473274A1B4912338F1B9D7 /* Pods-foQus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foQus.release.xcconfig"; path = "Pods/Target Support Files/Pods-foQus/Pods-foQus.release.xcconfig"; sourceTree = "<group>"; };
 		7D6C27E32018FBC30033FBA3 /* foQus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foQus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6C27E62018FBC40033FBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D6C27E82018FBC40033FBA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D6C27EB2018FBC40033FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D6C27F02018FBC40033FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D6C27F22018FBC40033FBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDC59E59646738925EF9CC0D /* Pods-foQus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foQus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foQus/Pods-foQus.debug.xcconfig"; sourceTree = "<group>"; };
 		E93DA3832021D5FD0039C398 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E9E9E3A82021F43200AD692C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9EADEDC201E683A00220B3C /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		E9F1BFE5203F3B10006468F1 /* Pods_foQus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_foQus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F1BFE7203F3B18006468F1 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F1BFE6203F3B18006468F1 /* Charts.framework in Frameworks */,
+				E9F1BFE4203F3B10006468F1 /* Pods_foQus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +52,8 @@
 			children = (
 				7D6C27E52018FBC30033FBA3 /* foQus */,
 				7D6C27E42018FBC30033FBA3 /* Products */,
+				8E3033B86F8D48FE0020C803 /* Pods */,
+				AD53C5D2708CFEE79CF8E096 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +80,24 @@
 			path = foQus;
 			sourceTree = "<group>";
 		};
+		8E3033B86F8D48FE0020C803 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDC59E59646738925EF9CC0D /* Pods-foQus.debug.xcconfig */,
+				60473274A1B4912338F1B9D7 /* Pods-foQus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD53C5D2708CFEE79CF8E096 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9F1BFE7203F3B18006468F1 /* Charts.framework */,
+				E9F1BFE5203F3B10006468F1 /* Pods_foQus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D6C27F52018FBC40033FBA3 /* Build configuration list for PBXNativeTarget "foQus" */;
 			buildPhases = (
+				A40A3AE01C73F020F85DB8C3 /* [CP] Check Pods Manifest.lock */,
 				7D6C27DF2018FBC30033FBA3 /* Sources */,
 				7D6C27E02018FBC30033FBA3 /* Frameworks */,
 				7D6C27E12018FBC30033FBA3 /* Resources */,
+				C16DC1563C9799BDB91CF3A6 /* [CP] Embed Pods Frameworks */,
+				D5428A62B75160C568D9EC38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +170,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A40A3AE01C73F020F85DB8C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-foQus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16DC1563C9799BDB91CF3A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-foQus/Pods-foQus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foQus/Pods-foQus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5428A62B75160C568D9EC38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foQus/Pods-foQus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D6C27DF2018FBC30033FBA3 /* Sources */ = {
@@ -283,10 +368,11 @@
 		};
 		7D6C27F62018FBC40033FBA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC59E59646738925EF9CC0D /* Pods-foQus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4258QUJ97;
+				DEVELOPMENT_TEAM = 5Q637S285L;
 				INFOPLIST_FILE = foQus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.optys.foQus;
@@ -298,10 +384,11 @@
 		};
 		7D6C27F72018FBC40033FBA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60473274A1B4912338F1B9D7 /* Pods-foQus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4258QUJ97;
+				DEVELOPMENT_TEAM = 5Q637S285L;
 				INFOPLIST_FILE = foQus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.optys.foQus;

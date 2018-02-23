@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class DashboardViewController: UIViewController {
     
@@ -15,11 +16,18 @@ class DashboardViewController: UIViewController {
     var menuShow = false
     var menuName = [String]()
     
+    struct chartDataValues {
+        var month: String
+        var value: Int
+    }
+    
     @IBOutlet weak var ProjectsView: UIView!
     
+    @IBOutlet weak var ChartsView: LineChartView!
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var SignOutButton: UIButton!
     @IBOutlet weak var ExperimentsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var counter = 0
@@ -77,7 +85,28 @@ class DashboardViewController: UIViewController {
 
         let tag = sender.tag as NSNumber
         lblMessage.text = "Exp " + tag.stringValue
+        
+        if(sender.tag == 0){
+            setChartValues();
+        }
+        
        
+        
+    }
+    func setChartValues(){
+        
+        let months = [1,2,3,4,5]
+        var count = 10
+        var dataArray = [ChartDataEntry]()
+        for month in months{
+            let valueData = ChartDataEntry(x: Double(month), y: Double(count))
+            dataArray.append(valueData)
+            count = count + 10
+        }
+       let set1 = LineChartDataSet(values: dataArray, label: "DataSet")
+        let data1 = LineChartData(dataSet: set1)
+        ChartsView.data = data1
+        
         
     }
 }
