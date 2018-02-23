@@ -16,11 +16,6 @@ class DashboardViewController: UIViewController {
     var menuShow = false
     var menuName = [String]()
     
-    struct chartDataValues {
-        var month: String
-        var value: Int
-    }
-    
     @IBOutlet weak var ProjectsView: UIView!
     
     @IBOutlet weak var ChartsView: LineChartView!
@@ -30,6 +25,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ChartsView.noDataText = ""
         var counter = 0
         for name in menuName {
             
@@ -83,23 +79,18 @@ class DashboardViewController: UIViewController {
         }
         menuShow = !menuShow
 
-        let tag = sender.tag as NSNumber
-        lblMessage.text = "Exp " + tag.stringValue
-        
-        if(sender.tag == 0){
-            setChartValues();
-        }
-        
-       
+        //let tag = sender.tag as NSNumber
+        lblMessage.text = menuName[sender.tag]
+        setChartValues(sender.tag);
         
     }
-    func setChartValues(){
-        
+    func setChartValues(_ tag : Int = 0){
+        // call method to get data here
         let months = [1,2,3,4,5]
         var count = 10
         var dataArray = [ChartDataEntry]()
         for month in months{
-            let valueData = ChartDataEntry(x: Double(month), y: Double(count))
+            let valueData = ChartDataEntry(x: Double(month), y: Double(arc4random_uniform(UInt32(count))))
             dataArray.append(valueData)
             count = count + 10
         }

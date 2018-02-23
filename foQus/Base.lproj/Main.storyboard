@@ -101,8 +101,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCp-UC-aEr">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E9-yj-PYm">
-                                        <rect key="frame" x="113.5" y="0.0" width="148.5" height="44.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E9-yj-PYm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -114,11 +114,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="4E9-yj-PYm" firstAttribute="leading" secondItem="OCp-UC-aEr" secondAttribute="leading" id="48k-SH-mCY"/>
                                     <constraint firstItem="4E9-yj-PYm" firstAttribute="top" secondItem="OCp-UC-aEr" secondAttribute="top" id="IQG-pM-3is"/>
                                     <constraint firstItem="5Oy-nx-kZQ" firstAttribute="leading" secondItem="OCp-UC-aEr" secondAttribute="leading" id="KSM-JZ-gGn"/>
                                     <constraint firstAttribute="bottom" secondItem="5Oy-nx-kZQ" secondAttribute="bottom" id="aCA-ZH-ThL"/>
                                     <constraint firstAttribute="trailing" secondItem="5Oy-nx-kZQ" secondAttribute="trailing" id="chu-qb-9T9"/>
                                     <constraint firstItem="5Oy-nx-kZQ" firstAttribute="top" secondItem="4E9-yj-PYm" secondAttribute="bottom" constant="24.5" id="hRR-fX-cB1"/>
+                                    <constraint firstItem="4E9-yj-PYm" firstAttribute="top" secondItem="OCp-UC-aEr" secondAttribute="top" id="kii-Ss-kxF"/>
+                                    <constraint firstAttribute="trailing" secondItem="4E9-yj-PYm" secondAttribute="trailing" id="lOE-tb-H0R"/>
                                     <constraint firstItem="4E9-yj-PYm" firstAttribute="centerX" secondItem="OCp-UC-aEr" secondAttribute="centerX" id="sS1-v3-HjA"/>
                                 </constraints>
                             </view>
