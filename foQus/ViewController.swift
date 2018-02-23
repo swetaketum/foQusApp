@@ -157,7 +157,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             switch (httpResponse.statusCode)
             {
             case 200:
-                let resp = NSString (data: receivedData, encoding: String.Encoding.utf8.rawValue)
+
                 //print(resp as Any)
                 
                 do
