@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class DashboardViewController: UIViewController {
     
@@ -15,10 +16,16 @@ class DashboardViewController: UIViewController {
     var menuShow = false
     var menuName = [String]()
     
+    @IBOutlet weak var ProjectsView: UIView!
+    
+    @IBOutlet weak var ChartsView: LineChartView!
+    @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var SignOutButton: UIButton!
     @IBOutlet weak var ExperimentsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ChartsView.noDataText = ""
         var counter = 0
         for name in menuName {
             
@@ -28,6 +35,8 @@ class DashboardViewController: UIViewController {
             testButton1.setTitle(name, for: .normal)
            //testButton1.backgroundColor = UIColor.black
             testButton1.setTitleColor(UIColor.black, for: .normal)
+            testButton1.tag = counter
+            testButton1.addTarget(self, action:#selector(menuClicked(sender:)), for: .touchUpInside)
             ExperimentsView.addSubview(testButton1)
             counter = counter + 1
         }
@@ -59,6 +68,36 @@ class DashboardViewController: UIViewController {
     func createMenu(){
          print("Inside")
        
+        
+    }
+    @IBAction func menuClicked(sender:UIButton){
+        if (menuShow){
+            menuConstraint.constant = -140
+        }
+        else {
+            menuConstraint.constant = 0
+        }
+        menuShow = !menuShow
+
+        //let tag = sender.tag as NSNumber
+        lblMessage.text = menuName[sender.tag]
+        setChartValues(sender.tag);
+        
+    }
+    func setChartValues(_ tag : Int = 0){
+        // call method to get data here
+        let months = [1,2,3,4,5]
+        var count = 10
+        var dataArray = [ChartDataEntry]()
+        for month in months{
+            let valueData = ChartDataEntry(x: Double(month), y: Double(arc4random_uniform(UInt32(count))))
+            dataArray.append(valueData)
+            count = count + 10
+        }
+       let set1 = LineChartDataSet(values: dataArray, label: "DataSet")
+        let data1 = LineChartData(dataSet: set1)
+        ChartsView.data = data1
+        
         
     }
 }
