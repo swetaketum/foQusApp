@@ -86,6 +86,7 @@ class DashboardViewController: UIViewController {
     }
     func setChartValues(_ tag : Int = 0){
         // call method to get data here
+        // here goes first data set
         let months = [1,2,3,4,5]
         var count = 10
         var dataArray = [ChartDataEntry]()
@@ -102,9 +103,36 @@ class DashboardViewController: UIViewController {
         set1.circleRadius = 6.0
         set1.fillAlpha = 65 / 255.0
         set1.fillColor = UIColor.blue
-        set1.highlightColor = UIColor.white
-        let data1 = LineChartData(dataSet: set1)
-        ChartsView.data = data1
+        set1.highlightColor = UIColor.blue
+        //let data1 = LineChartData(dataSet: set1)
+        // here goes second data set
+        var dataArray2 = [ChartDataEntry]()
+        for month in months{
+            let valueData = ChartDataEntry(x: Double(month), y: Double(arc4random_uniform(UInt32(count))))
+            dataArray2.append(valueData)
+            count = count + 10
+        }
+        let set2 = LineChartDataSet(values: dataArray2, label: "DataSet2")
+        set2.axisDependency = .left// Line will correlate with left axis values
+        set2.setColor(UIColor.yellow.withAlphaComponent(0.5))
+        set2.setCircleColor(UIColor.yellow)
+        set2.lineWidth = 2.0
+        set2.circleRadius = 6.0
+        set2.fillAlpha = 65 / 255.0
+        set2.fillColor = UIColor.yellow
+        set2.highlightColor = UIColor.yellow
+        
+        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+        dataSets.append(set1)
+        dataSets.append(set2)
+        
+        //4 - pass our months in for our x-axis label value along with our dataSets
+        let data: LineChartData = LineChartData(dataSets: dataSets)
+        //(xVals: months, dataSets: dataSets)
+        data.setValueTextColor(UIColor.white)
+        
+        //5 - finally set our data
+        ChartsView.data = data
         
         
     }
