@@ -95,6 +95,14 @@ class DashboardViewController: UIViewController {
             count = count + 10
         }
        let set1 = LineChartDataSet(values: dataArray, label: "DataSet")
+        set1.axisDependency = .left// Line will correlate with left axis values
+        set1.setColor(UIColor.blue.withAlphaComponent(0.5))
+        set1.setCircleColor(UIColor.blue)
+        set1.lineWidth = 2.0
+        set1.circleRadius = 6.0
+        set1.fillAlpha = 65 / 255.0
+        set1.fillColor = UIColor.blue
+        set1.highlightColor = UIColor.white
         let data1 = LineChartData(dataSet: set1)
         ChartsView.data = data1
         
