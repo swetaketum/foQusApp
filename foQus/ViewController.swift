@@ -136,7 +136,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
     }
     
-    var experiments = [String]()
+    var experiments = [String : Int]()
     func getLabDataAndSegue()
     {
         let configuration = URLSessionConfiguration.default
@@ -176,8 +176,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.self.experiments.removeAll()
                         for item in exp!
                         {
-                            self.self.experiments.append(item["experiment_name"] as! String)
-                            print(item["experiment_name"] ?? "no value inside loop")
+                            self.self.experiments.updateValue(item["id"] as! Int, forKey: item["experiment_name"] as! String)
+                            print(self.self.experiments )
                         }
                         DispatchQueue.main.async {
                             
@@ -206,7 +206,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let myDash = segue.destination.childViewControllers[0] as? DashboardViewController
             for item in experiments
             {
-                myDash?.menuName.append(item)
+                //myDash?.menuName.append(item)
             }
         }
         print(segue.destination.childViewControllers[0])
