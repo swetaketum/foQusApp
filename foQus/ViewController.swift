@@ -77,12 +77,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let key = json!["key"] as? String
                         print(key ?? "no value")
                         UserDefaults.standard.set(key, forKey: "key")
+                        self.self.getLabDataAndSegue()
                     }
                     catch
                     {
-                        
+                        print("In catch block of case 200")
+                        DispatchQueue.main.async {
+                            let alertController = UIAlertController(title: "Sign In", message:
+                                "Error", preferredStyle: UIAlertControllerStyle.alert)
+                            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
                     }
-                    self.self.getLabDataAndSegue()
                 }
                 else
                 {
