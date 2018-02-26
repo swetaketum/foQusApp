@@ -115,6 +115,7 @@ class DashboardViewController: UIViewController {
                 do
                 {
                     let json = try JSONSerialization.jsonObject(with: receivedData) as? [String: Any]
+                    print(json ?? "no value")
                     let months = [1,2,3,4,5]
                     var count = 10
                     var dataArray = [ChartDataEntry]()
