@@ -14,7 +14,7 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var menuConstraint: NSLayoutConstraint!
     var menuShow = false
-    var menuName = [String]()
+    var menuName = [String : Int]()
     
     @IBOutlet weak var ProjectsView: UIView!
     
@@ -32,10 +32,10 @@ class DashboardViewController: UIViewController {
              print(name)
             let testButton1 = UIButton(type: .roundedRect) as UIButton
             testButton1.frame = CGRect(x: 0, y: counter * 50 , width: 120, height: 50)
-            testButton1.setTitle(name, for: .normal)
+            testButton1.setTitle(name.key, for: .normal)
            //testButton1.backgroundColor = UIColor.black
             testButton1.setTitleColor(UIColor.black, for: .normal)
-            testButton1.tag = counter
+            testButton1.tag = name.value
             testButton1.addTarget(self, action:#selector(menuClicked(sender:)), for: .touchUpInside)
             ExperimentsView.addSubview(testButton1)
             counter = counter + 1
@@ -80,7 +80,7 @@ class DashboardViewController: UIViewController {
         menuShow = !menuShow
 
         //let tag = sender.tag as NSNumber
-        lblMessage.text = menuName[sender.tag]
+        lblMessage.text = sender.currentTitle
         setChartValues(sender.tag);
         
     }
@@ -108,60 +108,51 @@ class DashboardViewController: UIViewController {
             
             switch (httpResponse.statusCode)
             {
-            case 200:
-                
-                //print(resp as Any)
-                
+                case 200:
                 do
                 {
-                    let json = try JSONSerialization.jsonObject(with: receivedData) as? [String: Any]
-                    print(json ?? "no value")
-                    let months = [1,2,3,4,5]
-                    var count = 10
-                    var dataArray = [ChartDataEntry]()
-                    for month in months{
-                        let valueData = ChartDataEntry(x: Double(month), y: Double(arc4random_uniform(UInt32(count))))
-                        dataArray.append(valueData)
-                        count = count + 10
-                    }
-                    let set1 = LineChartDataSet(values: dataArray, label: "DataSet")
-                    set1.axisDependency = .left// Line will correlate with left axis values
-                    set1.setColor(UIColor.blue.withAlphaComponent(0.5))
-                    set1.setCircleColor(UIColor.blue)
-                    set1.lineWidth = 2.0
-                    set1.circleRadius = 6.0
-                    set1.fillAlpha = 65 / 255.0
-                    set1.fillColor = UIColor.blue
-                    set1.highlightColor = UIColor.blue
-                    //let data1 = LineChartData(dataSet: set1)
-                    // here goes second data set
-                    var dataArray2 = [ChartDataEntry]()
-                    for month in months{
-                        let valueData = ChartDataEntry(x: Double(month), y: Double(arc4random_uniform(UInt32(count))))
-                        dataArray2.append(valueData)
-                        count = count + 10
-                    }
-                    let set2 = LineChartDataSet(values: dataArray2, label: "DataSet2")
-                    set2.axisDependency = .left// Line will correlate with left axis values
-                    set2.setColor(UIColor.yellow.withAlphaComponent(0.5))
-                    set2.setCircleColor(UIColor.yellow)
-                    set2.lineWidth = 2.0
-                    set2.circleRadius = 6.0
-                    set2.fillAlpha = 65 / 255.0
-                    set2.fillColor = UIColor.yellow
-                    set2.highlightColor = UIColor.yellow
-                    
+                    let jsonString = String(data: receivedData, encoding: String.Encoding.utf8)
+                    print(jsonString ?? "no value")
+                    let chartData = try Welcome(jsonString!)
+                    print(chartData)
                     var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-                    dataSets.append(set1)
-                    dataSets.append(set2)
+                    let dataFiles = chartData.data.datafiles
+                    
+                    var index : Double = 0.0;
+                    for file in dataFiles
+                    {
+                        var sum : Double = 0.0
+                        for analyte in file.analytes
+                        {
+                            sum += analyte.rt
+                        }
+                        let valueData = ChartDataEntry(x: index, y: sum / (Double)(file.analytes.count))
+                        var dataArray = [ChartDataEntry]()
+                        dataArray.append(valueData)
+                        let set1 = LineChartDataSet(values: dataArray, label: file.fileName)
+                        set1.axisDependency = .left// Line will correlate with left axis values
+                        let setColor : UIColor = self.generateRandomColor()
+                        set1.setColor(setColor.withAlphaComponent(0.5))
+                        set1.setCircleColor(setColor)
+                        set1.lineWidth = 2.0
+                        set1.circleRadius = 6.0
+                        set1.fillAlpha = 65 / 255.0
+                        set1.fillColor = setColor
+                        set1.highlightColor = setColor
+                        dataSets.append(set1)
+                        index += 10
+                    }
                     
                     //4 - pass our months in for our x-axis label value along with our dataSets
                     let data: LineChartData = LineChartData(dataSets: dataSets)
                     //(xVals: months, dataSets: dataSets)
                     data.setValueTextColor(UIColor.white)
                     
-                    //5 - finally set our data
-                    self.ChartsView.data = data
+                    DispatchQueue.main.async {
+                        
+                        //5 - finally set our data
+                        self.ChartsView.data = data
+                    }
                     
                 }
                 catch
@@ -174,13 +165,16 @@ class DashboardViewController: UIViewController {
             default:
                 print(httpResponse.statusCode)
                 break
-        // call method to get data here
-        // here goes first data set
-       
-        
-        
-    }
-}
+            }
+        }
         dataTask.resume()
+    }
+    
+    func generateRandomColor() -> UIColor {
+        let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
+        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
+        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
+        
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
 }

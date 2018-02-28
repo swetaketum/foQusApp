@@ -11,6 +11,7 @@
 		7D6C27E92018FBC40033FBA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C27E82018FBC40033FBA3 /* ViewController.swift */; };
 		7D6C27EC2018FBC40033FBA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6C27EA2018FBC40033FBA3 /* Main.storyboard */; };
 		7D6C27F12018FBC40033FBA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6C27EF2018FBC40033FBA3 /* LaunchScreen.storyboard */; };
+		7DA46DC82046D34F0045E523 /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA46DC72046D34F0045E523 /* DataClass.swift */; };
 		E93DA3842021D5FD0039C398 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DA3832021D5FD0039C398 /* DashboardViewController.swift */; };
 		E9E9E3A92021F43200AD692C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9E3A82021F43200AD692C /* Images.xcassets */; };
 		E9EADEDD201E683A00220B3C /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EADEDC201E683A00220B3C /* DesignableTextField.swift */; };
@@ -26,6 +27,7 @@
 		7D6C27EB2018FBC40033FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D6C27F02018FBC40033FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D6C27F22018FBC40033FBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA46DC72046D34F0045E523 /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		CDC59E59646738925EF9CC0D /* Pods-foQus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foQus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foQus/Pods-foQus.debug.xcconfig"; sourceTree = "<group>"; };
 		E93DA3832021D5FD0039C398 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E9E9E3A82021F43200AD692C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				E9EADEDC201E683A00220B3C /* DesignableTextField.swift */,
 				E93DA3832021D5FD0039C398 /* DashboardViewController.swift */,
 				E9E9E3A82021F43200AD692C /* Images.xcassets */,
+				7DA46DC72046D34F0045E523 /* DataClass.swift */,
 			);
 			path = foQus;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				7D6C27E92018FBC40033FBA3 /* ViewController.swift in Sources */,
 				E9EADEDD201E683A00220B3C /* DesignableTextField.swift in Sources */,
+				7DA46DC82046D34F0045E523 /* DataClass.swift in Sources */,
 				7D6C27E72018FBC40033FBA3 /* AppDelegate.swift in Sources */,
 				E93DA3842021D5FD0039C398 /* DashboardViewController.swift in Sources */,
 			);

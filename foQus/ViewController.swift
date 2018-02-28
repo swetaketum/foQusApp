@@ -206,7 +206,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let myDash = segue.destination.childViewControllers[0] as? DashboardViewController
             for item in experiments
             {
-                //myDash?.menuName.append(item)
+                myDash?.menuName.updateValue(item.value, forKey: item.key)
             }
         }
         print(segue.destination.childViewControllers[0])
